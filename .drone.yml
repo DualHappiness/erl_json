@@ -1,0 +1,22 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: dualwu/erlang-rust
+    commands:
+      - rebar3 get-deps
+      - rebar3 check
+
+---
+kind: pipeline
+type: docker
+name: centos
+
+steps:
+  - name: build
+    image: dualwu/erlang-rust-centos
+    commands:
+      - rebar3 get-deps
+      - rebar3 check
