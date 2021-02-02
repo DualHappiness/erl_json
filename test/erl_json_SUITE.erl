@@ -25,13 +25,22 @@ error_case() ->
 
 encode_test(_Config) ->
     [
-        ?assertEqual(A, EncodeJson)
-        || {A, B} <- test_case(), {ok, EncodeJson} = erl_json:encode(B)
+        begin
+            {ok, EncodeJson} = erl_json:encode(B),
+            ?assertEqual(A, EncodeJson)
+        end
+        || {A, B} <- test_case()
     ],
     ok.
 
 decode_test(_Config) ->
-    [?assertEqual(B, DecodeJson) || {A, B} <- test_case(), {ok, DecodeJson} = erl_json:decode(A)],
+    [
+        begin
+            {ok, DecodeJson} = erl_json:decode(A),
+            ?assertEqual(B, DecodeJson)
+        end
+        || {A, B} <- test_case()
+    ],
     ok.
 
 performance_test(_Config) ->
