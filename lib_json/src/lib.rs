@@ -106,14 +106,14 @@ impl<'a> Decoder<'a> for DecodeWrapper {
 fn decode<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, rustler::Error> {
     let chars: &[u8] = args[0].decode::<rustler::types::Binary>()?.as_slice();
     let deserialized: serde_json::Value = serde_json::from_slice(chars).unwrap();
-    Ok((atoms::ok(), EncodeWrapper(&deserialized)).encode(env))
+    Ok(EncodeWrapper(&deserialized).encode(env))
 }
 
 fn encode<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, rustler::Error> {
     let value_wrapper: DecodeWrapper = args[0].decode()?;
 
     match serde_json::to_string(&value_wrapper.0) {
-        Ok(string) => Ok((atoms::ok(), string).encode(env)),
+        Ok(string) => Ok(string.encode(env)),
         Err(_) => Err(rustler::Error::BadArg),
     }
 }

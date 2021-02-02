@@ -2,7 +2,7 @@
 
 -on_load(init/0).
 
--export([encode/1, decode/1]).
+-export([init/0, encode/1, decode/1]).
 
 init() ->
     PrivPath = code:priv_dir(erl_json),

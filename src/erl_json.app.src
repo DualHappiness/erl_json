@@ -2,6 +2,7 @@
     {description, "erl rust json nif"},
     {vsn, "0.1.0"},
     {env, []},
+    {applications, [kernel, stdlib]},
     {modules, [erl_json]},
 
     {licenses, ["Apache 2.0"]},
