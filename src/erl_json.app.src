@@ -1,0 +1,9 @@
+{application, erl_json, [
+    {description, "erl rust json nif"},
+    {vsn, "0.1.0"},
+    {env, []},
+    {modules, [erl_json]},
+
+    {licenses, ["Apache 2.0"]},
+    {links, []}
+]}.

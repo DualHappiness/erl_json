@@ -1,0 +1,18 @@
+[package]
+name = "lib_json"
+version = "0.1.0"
+authors = ["wushuang <wushuang@dayukeji.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "erl_json"
+path = "src/lib.rs"
+crate-type = ["dylib"]
+
+[dependencies]
+rustler = "0.21.1"
+lazy_static = "1.0"
+serde = {version = "1.0.123", features = ["derive"] }
+serde_json = "^1.0"
+
