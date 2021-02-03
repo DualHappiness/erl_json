@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: build
-    image: dualwu/erlang-rust
+    image: dualwu/erlang-rust-centos
     commands:
       - rebar3 get-deps
       - rebar3 check
