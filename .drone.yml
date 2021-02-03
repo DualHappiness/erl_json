@@ -7,4 +7,5 @@ steps:
     image: dualwu/erlang-rust-centos
     commands:
       - rebar3 get-deps
-      - rebar3 check
+      - rebar3 compile
+      - rebar3 ct
