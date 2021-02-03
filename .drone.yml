@@ -7,5 +7,4 @@ steps:
     image: dualwu/erlang-rust
     commands:
       - rebar3 get-deps
-      - rebar3 compile
-      - rebar3 ct
+      - rebar3 check
