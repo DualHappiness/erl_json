@@ -7,17 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     container:
       image: dualwu/erlang-rust
-
     steps:
     - uses: actions/checkout@v2
     - name: Compile
       run: rebar3 compile
     - name: Run tests
       run: rebar3 check
+

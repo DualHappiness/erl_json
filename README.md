@@ -1,4 +1,4 @@
-[![Build Status](http://10.1.221.131:11180/api/badges/ErlangFramework/erl_json/status.svg)](http://10.1.221.131:11180/ErlangFramework/erl_json)
+![Erlang CI](https://github.com/DualHappiness/erl_json/workflows/Erlang%20CI/badge.svg?branch=main)
 erl_json
 =====
 
