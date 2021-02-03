@@ -1,5 +1,6 @@
 ![Erlang CI](https://github.com/DualHappiness/erl_json/workflows/Erlang%20CI/badge.svg?branch=main)
-erl_json
+
+# erl_json
 =====
 
 a native json parser
