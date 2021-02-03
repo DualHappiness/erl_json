@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: build
-    image: erlang
+    image: dualwu/erlang-rust
     commands:
       - rebar3 get-deps
       - rebar3 check
