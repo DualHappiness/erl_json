@@ -9,10 +9,10 @@ init() ->
     LibPath = filename:join(PrivPath, "liberl_json"),
     erlang:load_nif(LibPath, 0).
 
--spec decode(string()) -> {ok, JSON :: map()} | {error, Reason :: term()}.
+-spec decode(string()) -> JSON :: map().
 decode(_String) ->
     error("nif not loaded").
 
--spec encode(JSON :: map()) -> {ok, string()} | {error, Reason :: term()}.
+-spec encode(JSON :: map()) -> string().
 encode(_Json) ->
     error("nif not loaded").
